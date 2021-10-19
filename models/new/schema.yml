@@ -1,0 +1,6 @@
+
+version: 2
+
+models:
+  - name: dates
+    description: "A new dbt model"

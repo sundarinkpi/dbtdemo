@@ -14,11 +14,14 @@ with source_data as (
     select 1 as id
     union all
     select null as id
+    union all
+    select 3 as id
 
 )
 
-select *
+select *, {{ var('first_variable')}} as is_present
 from source_data
+--where id >= {{ var('second_variable')}}
 
 /*
     Uncomment the line below to remove records with null `id` values
