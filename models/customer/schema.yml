@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: dates
+  - name: purchase
     description: "A new dbt model"
 
 sources:
