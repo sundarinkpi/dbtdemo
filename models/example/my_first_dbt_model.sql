@@ -7,21 +7,20 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
+{{ config(materialized='table', alias='first_model', tags=["nightly", "cust_address"] ) }}
 
 with source_data as (
 
-    select 1 as id
+    select 1 as id, 'UP' as state, '2021-10-01 00:01:00.000'::timestamp as updated_at
     union all
-    select null as id
+    select 2 as id, 'TN' as state, '2021-08-01 00:00:00.000'::timestamp as updated_at
     union all
-    select 3 as id
+    select 3 as id, 'MH' as state, '2021-08-01 00:00:00.000'::timestamp as updated_at
 
 )
 
-select *, {{ var('first_variable')}} as is_present
+select *
 from source_data
---where id >= {{ var('second_variable')}}
 
 /*
     Uncomment the line below to remove records with null `id` values
