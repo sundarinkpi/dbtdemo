@@ -16,10 +16,9 @@ with source_data as (
     select 2 as id, 'TN' as state, '2021-08-01 00:00:00.000'::timestamp as updated_at
     union all
     select 3 as id, 'MH' as state, '2021-08-01 00:00:00.000'::timestamp as updated_at
-<<<<<<< HEAD
-=======
+    union all
+    select 7 as id, 'MH' as state, '2021-08-01 00:00:00.000'::timestamp as updated_at
 
->>>>>>> 5ea1bc4900e02675efae4e8731b14ff4f0ac387d
 )
 
 select *

@@ -25,4 +25,4 @@ where year(o_orderdate)= 1998
 {% endif %}
 
  {{group_by(4)}}
- having total > 500000
+ having total > 5000000000
