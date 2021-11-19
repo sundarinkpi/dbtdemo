@@ -7,13 +7,17 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table', alias='first_model', tags=["nightly", "cust_address"] ) }}
+{{ config(materialized='table', alias='indian_st_lkp', tags=["nightly", "cust_address"] ) }}
 
 with source_data as (
 
     select 1 as id, 'UP' as state, '2021-10-01 00:01:00.000'::timestamp as updated_at
     union all
     select 2 as id, 'TN' as state, '2021-08-01 00:00:00.000'::timestamp as updated_at
+    union all
+    select 3 as id, 'TN' as state, '2021-08-01 00:00:00.000'::timestamp as updated_at
+    union all
+    select 4 as id, 'TN' as state, '2021-08-01 00:00:00.000'::timestamp as updated_at
 )
 
 select *
